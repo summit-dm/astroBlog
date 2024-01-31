@@ -1,5 +1,12 @@
 ---
+const pageTitle = "About";
 
+const identity = {
+    firstName: "FirstName",
+    hobbies: ["snowboarding", "coding", "drawing", "skateboarding", "soccer"],
+};
+
+const skills = ["HTML", "CSS", "Javascript", "React", "Astro", "Vue"];
 ---
 
 <html lang="en">
@@ -8,13 +15,13 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <div class="container">
             <nav>
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/about">{pageTitle}</a></li>
                 <li><a href="/blog">Blog</a></li>
             </nav>
         </div>
@@ -22,5 +29,10 @@
         <h2>This is a new Astro site</h2>
         <p>Working through testing out Astro's site setup and deployment. Also using GitHub and Netlify to show proof of concept.</p>
         <p>This site will continue to be updated as new features are tested out and built with the Astro Framework.</p>
+        <p>Testing of some JS variable outputs in Astro. Name is {identity.firstName}</p>
+        <p>Let's list out some arrays next.</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
 	</body>
 </html>
