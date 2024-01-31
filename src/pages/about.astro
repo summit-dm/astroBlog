@@ -1,4 +1,5 @@
 ---
+import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 
 const pageTitle = "About";
@@ -20,13 +21,7 @@ const skills = ["HTML", "CSS", "Javascript", "React", "Astro", "Vue"];
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <div class="container">
-            <nav>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">{pageTitle}</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </nav>
-        </div>
+        <Navigation />
 		<h1>About</h1>
         <h2>This is a new Astro site</h2>
         <p>Working through testing out Astro's site setup and deployment. Also using GitHub and Netlify to show proof of concept.</p>
