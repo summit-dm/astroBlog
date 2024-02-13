@@ -1,0 +1,15 @@
+---
+import * as prismic from '@prismicio/client'
+import fetch from 'node-fetch'
+
+const repoName = 'sdm-astro';
+const client = prismic.createClient(repoName, { fetch });
+const prismicDoc = await client.getFirst();
+const { page_title, description } = prismicDoc.data;
+const titleHTML = prismic.asHTML(page_title);
+const descriptionHTML = prismic.asHTML(description);
+
+// console.log(titleHTML, descriptionHTML);
+---
+{ titleHTML }
+{ descriptionHTML }
