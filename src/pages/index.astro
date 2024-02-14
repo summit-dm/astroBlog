@@ -12,9 +12,14 @@ const client = prismic.createClient(repoName, { fetch });
     const { page_title, description } = prismicDoc.data;
     const titleHTML = prismic.asHTML(page_title);
     const descriptionHTML = prismic.asHTML(description);
+	// const image = prismic.asImageSrc(prismicDoc.data.image);
+	const imageHTML = `"${prismicDoc.data.image.url}"`;
 
     // console.log(titleHTML, descriptionHTML);
+
+	console.log(prismicDoc.data.image)
 // }
+const test = "Alt text";
 
 ---
 
@@ -29,7 +34,8 @@ const client = prismic.createClient(repoName, { fetch });
 	<body>
 		<Navigation />
 		<h1>My Astro Site Hello Everyone</h1>
-		<Fragment set:html={descriptionHTML}>
+		<Fragment set:html={descriptionHTML} />
+		<img src={prismicDoc.data.image.url} alt={test}>
 		<Footer />
 	</body>
 </html>
